@@ -6,6 +6,9 @@ customer_residence_info(account_number, house_number, street, district, city, pi
 customer_account_info(account_number, balance)
 customer_login_info(account_number, username, password)
 
+<------ DATABASE CREATE ------------>
+
+create database online_banking_system;
 
 <------ SQL TABLES -------------->
 
