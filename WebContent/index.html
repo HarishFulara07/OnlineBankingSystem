@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<!-- Meta information -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- Title of the website -->
+		<title>OnlineBankingSystem</title>
+		
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+		<!-- Font awesome -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+		<!-- Custom CSS files -->
+		<link rel="stylesheet" href="css/custom_style.css">
+
+		<!-- Google Font -->
+		<link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+	</head>
+
+	<body>
+		<nav class="navbar navbar-fixed-top" role="navigation">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="index.html"><img src="img/bank.png" height=80 width=100 style="margin-top: -30px"></a>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li>
+						<a href="index.html"><i class="fa fa-home fa-lg"></i> Home</a>
+					</li>
+					<li>
+						<a href="#"><i class="fa fa-credit-card fa-lg"></i> Services</a>
+					</li>
+					<li>
+						<a href="#"><i class="fa fa-question fa-lg"></i> FAQ</a>
+					</li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+						<a href="#" data-toggle="modal">
+						<i class="fa fa-user-plus fa-lg"></i> Register</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+
+		<header class="jumbotron jumb">
+			<div class="container">
+				<h1 style="text-decoration: underline; letter-spacing: 5px; font-family: 'Montserrat', sans-serif">XYZ Online Banking System</h1>
+				<br>
+				<h2 style="letter-spacing: 5px; font-family: 'Montserrat', sans-serif">Login</h2>
+				<br>
+				<form id="login-form" name="form" class="form-horizontal" role="form" method="POST" action="loginstep1">
+					<div class="form-group">
+						<div class="col-sm-5">
+							<div class="input-group margin-bottom-sm">
+								<span class="input-group-addon">
+					        		<i class="fa fa-user fa-lg"></i>
+					    		</span>
+								<input type="text" class="form-control" name="username" placeholder="Enter your username" required>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-5">
+							<div class="input-group clockpicker" data-placement="top" data-align="top" data-autoclose="true">
+								<span class="input-group-addon">
+				        			<i class="fa fa-key"></i>
+				    			</span>
+				    			<input type="password" class="form-control" name="password" placeholder="Enter your password" required>
+							</div>
+						</div>
+					</div>
+					<button type="submit" class="btn btn-default btn-lg">Login</button>
+				</form>
+			</div>
+		</header>
+
+		<footer class="row-footer">
+			<div class="container">
+				<p>For technical issues, mail us at: <a href="#">bugs@xyzbank.com</a></p>
+				<p>Follow us on: </p>
+				<a href="#" style="color: #3b5998"><i class="fa fa-facebook-official fa-3x"></i></a>
+				<a href="#" style="color: #0095fd"><i class="fa fa-twitter-square fa-3x"></i></a>
+				<a href="#" style="color: #0077b5"><i class="fa fa-linkedin-square fa-3x"></i></a>
+				<a href="#" style="color: #dc4e41"><i class="fa fa-google-plus-square fa-3x"></i></a>
+			</div>
+		</footer>
+
+		<!-- latest JQuery -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
+		<script src="script/bootstrap.min.js"></script>
+		
+	</body>
+
+</html>
