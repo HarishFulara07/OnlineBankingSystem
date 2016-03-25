@@ -37,6 +37,7 @@ public class CustomerHome extends HttpServlet {
 		Integer pincode = null;
 		String state = null;
 		Long balance = null;
+		String ifsc_code = null;
 		
 		Connection connection = null;
 		Statement statement = null; 
@@ -65,6 +66,7 @@ public class CustomerHome extends HttpServlet {
 				pincode = rs.getInt("pincode");
 				state = rs.getString("state");
 				balance = rs.getLong("balance");
+				ifsc_code = rs.getString("ifsc_code");
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -97,5 +99,6 @@ public class CustomerHome extends HttpServlet {
 		out.println("<p>" + state + "</p>");
 		out.println("<p>" + account_number + "</p>");
 		out.println("<p>" + balance + "</p>");
+		out.println("<p>" + ifsc_code + "</p>");
 	}
 }

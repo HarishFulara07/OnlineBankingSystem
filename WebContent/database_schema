@@ -1,9 +1,10 @@
 <------ DATABASE SCHEMA ------------->
 
+bank_info(bank_name, branch_name, ifsc_code)
 customer_personal_info(account_number, first_name, last_name, gender, dob)
 customer_contact_info(account_number, email, mobile_number)
 customer_residence_info(account_number, house_number, street, district, city, pincode, state)
-customer_account_info(account_number, balance)
+customer_account_info(account_number, balance, ifsc_code)
 customer_login_info(account_number, username, password)
 
 <------ DATABASE CREATE ------------>
@@ -11,6 +12,13 @@ customer_login_info(account_number, username, password)
 create database online_banking_system;
 
 <------ SQL TABLES -------------->
+
+create table bank_info (
+bank_name varchar(100),
+branch_name varchar(100),
+ifsc_code varchar(20) not null,
+primary key(ifsc_code)
+);
 
 create table customer_personal_info (
 account_number bigint not null,
@@ -42,7 +50,9 @@ primary key(account_number)
 create table customer_account_info (
 account_number bigint not null,
 balance bigint,
-primary key(account_number)
+ifsc_code varchar(20),
+primary key(account_number),
+foreign key(ifsc_code) references bank_info(ifsc_code)
 );
 
 create table customer_login_info (
@@ -55,32 +65,38 @@ primary key(account_number)
 
 <------- SQL RECORDS ------------->
 
+insert into bank_info values("State Bank of India", "Patparganj", "SBI123456");
+insert into bank_info values("Punjab National Bank", "Lajpat Nagar", "PNB123456");
+insert into bank_info values("Axis Bank", "Patparganj", "AXIS123456");
+insert into bank_info values("State Bank of India", "Mayur Vihar", "SBI147258");
+insert into bank_info values("HDFC Bank", "Patparganj", "HDFC123456");
+
 insert into customer_personal_info values(1000000000, "Harish", "Fulara", "male", "1996-09-20");
 insert into customer_contact_info values(1000000000, "harish.fulara007@gmail.com", 9013459254);
 insert into customer_residence_info values(1000000000, "A-25", "16", "Patparganj", "Delhi", 110092, "Delhi");
-insert into customer_account_info values(1000000000, 200000);
+insert into customer_account_info values(1000000000, 200000, "SBI123456");
 insert into customer_login_info values(1000000000, "HarishFulara07", SHA1("Harish@147258369"));
 
 insert into customer_personal_info values(1000000001, "Akash", "Gupta", "male", "1994-12-22");
 insert into customer_contact_info values(1000000001, "akash.gupta048@gmail.com", 9013485910);
 insert into customer_residence_info values(1000000001, "B-69", "13", "Lajpat Nagar", "Delhi", 110097, "Delhi");
-insert into customer_account_info values(1000000001, 220000);
+insert into customer_account_info values(1000000001, 220000, "PNB123456");
 insert into customer_login_info values(1000000001, "AkashGupta48", SHA1("Akash@147258369"));
 
 insert into customer_personal_info values(1000000002, "Rohan", "Khanna", "male", "1991-01-20");
 insert into customer_contact_info values(1000000002, "rohan.khanna094@gmail.com", 9078349254);
 insert into customer_residence_info values(1000000002, "A-20", "10", "Patparganj", "Delhi", 110092, "Delhi");
-insert into customer_account_info values(1000000002, 100000);
+insert into customer_account_info values(1000000002, 100000, "AXIS123456");
 insert into customer_login_info values(1000000002, "RohanKhanna94", SHA1("Rohan@147258369"));
 
 insert into customer_personal_info values(1000000003, "Vipin", "Goyal", "male", "1980-01-01");
 insert into customer_contact_info values(1000000003, "vipin.goyal080@gmail.com", 9836854725);
 insert into customer_residence_info values(1000000003, "K-71", "16", "Mayur Vihar", "Delhi", 110092, "Delhi");
-insert into customer_account_info values(1000000003, 1000000);
+insert into customer_account_info values(1000000003, 1000000, "SBI147258");
 insert into customer_login_info values(1000000003, "VipinGoyal80", SHA1("Vipin@147258369"));
 
 insert into customer_personal_info values(1000000004, "Radhika", "Sharma", "female", "1994-11-14");
 insert into customer_contact_info values(1000000004, "radhika.sharma028@gmail.com", 9013486950);
 insert into customer_residence_info values(1000000004, "B-25", "18", "Patparganj", "Delhi", 110092, "Delhi");
-insert into customer_account_info values(1000000004, 20000);
+insert into customer_account_info values(1000000004, 20000, "HDFC123456");
 insert into customer_login_info values(1000000004, "RadhikaSharma28", SHA1("Radhika@147258369"));
