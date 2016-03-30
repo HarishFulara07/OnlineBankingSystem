@@ -53,16 +53,27 @@ address{
     color:#0f0f0f;
 }
 
-.jumb{
+.jumb1{
     padding:20px 5px 20px 5px;
     margin:0px auto;
     background: #008000;
     color: #fff;
 }
 
+.jumb2{
+    padding:20px 5px 20px 5px;
+    margin:0px auto;
+    background: #6347b2;
+    color: #fff;
+}
+
 #login-form input {
     height: 50px;
     font-size: 18px;
+}
+
+#register-form label {
+     letter-spacing: 5px;
 }
 
 #login-again {
