@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<!-- Meta information -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- Title of the website -->
+		<title>OnlineBankingSystem</title>
+		
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+		<!-- Font awesome -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+		<!-- Custom CSS files -->
+		<link rel="stylesheet" href="css/custom_style.css">
+		<!--- Image Picker CSS File-->
+		<link rel="stylesheet" href="css/image-picker.css">
+
+		<!--- Google Font -->
+		<link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+	</head>
+
+	<body>
+		<nav class="navbar navbar-fixed-top" role="navigation">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="index.html"><img src="img/bank.png" height=80 width=100 style="margin-top: -30px"></a>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li>
+						<a href="index.html"><i class="fa fa-home fa-lg"></i> Home</a>
+					</li>
+					<li>
+						<a href="#"><i class="fa fa-credit-card fa-lg"></i> Services</a>
+					</li>
+					<li>
+						<a href="#"><i class="fa fa-question fa-lg"></i> FAQ</a>
+					</li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+						<a href="registerpart1.html">
+						<i class="fa fa-user-plus fa-lg"></i> Register</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+
+		<header class="jumbotron jumb1">
+			<a style="letter-spacing: 3px" href="#imgPickerModal" class="btn btn-default" data-toggle="modal">Click to Select Images</a>
+		</header>
+
+		<div id="imgPickerModal" class="modal fade" role="dialog">
+			<div class="modal-dialog modal-lg">
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h2 style="color: #ffffff; letter-spacing: 10px; font-weight: bold" class="modal-title">IMAGES</h2>
+						<br>
+						<p style="color: #ffffff; font-size: 16px; letter-spacing: 3px"><ins>Note</ins>: Select/Upload 2 to 5 images only.</p>
+						<p style="color: #ffffff; font-size: 16px; letter-spacing: 3px"><ins>Note</ins>: You can either select from the below images or upload your own images or both. Uploading your own images will lead to more account security.</p>
+					</div>
+					<div class="modal-body">
+						<select id="selector" multiple="multiple" class="image-picker show-html">
+							<option data-img-src="img/android.jpg" value="android.jpg">android</option>
+							<option data-img-src="img/bmw.jpg" value="bmw.jpg">bmw</option>
+							<option data-img-src="img/ea.png" value="ea.png">ea</option>
+							<option data-img-src="img/paytm.jpg" value="paytm.jpg">mumbai</option>
+							<option data-img-src="img/car.jpg" value="car.jpg">car</option>
+							<option data-img-src="img/bulb.jpg" value="bulb.jpg">ibm</option>
+							<option data-img-src="img/twitter.jpg" value="twitter.jpg">gamatics</option>
+							<option data-img-src="img/flower.jpg" value="flower.jpg">bulb</option>
+							<option data-img-src="img/jabong.jpg" value="jabong.jpg">jabong</option>	
+						</select>
+						<hr>
+						<div>
+							<h1 style="text-decoration: underline; letter-spacing: 5px; font-family: 'Montserrat', sans-serif">Upload Custom Images</h1>
+							<br>
+							<form id="register-upload-form" name="upload-form" class="form-horizontal" role="form" method="POST" enctype="multipart/form-data" action="registration2">
+								<div class="form-group">
+									<div class="col-sm-8">
+										<input type="file" class="form-control" name="imgup" accept="image/*" multiple required>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="col-sm-8">
+										<button type="submit" class="btn btn-info btn-lg">Submit</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<footer class="row-footer">
+			<div class="container">
+				<p>For technical issues, mail us at: <a href="#">bugs@xyzbank.com</a></p>
+				<p>Follow us on: </p>
+				<a href="#" style="color: #3b5998"><i class="fa fa-facebook-official fa-3x"></i></a>
+				<a href="#" style="color: #0095fd"><i class="fa fa-twitter-square fa-3x"></i></a>
+				<a href="#" style="color: #0077b5"><i class="fa fa-linkedin-square fa-3x"></i></a>
+				<a href="#" style="color: #dc4e41"><i class="fa fa-google-plus-square fa-3x"></i></a>
+			</div>
+		</footer>
+
+		<!-- latest JQuery -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
+		<script src="script/bootstrap.min.js"></script>
+		<script src="script/image-picker.js"></script>
+
+		<script>
+			$(document).ready(function () {
+				$("select").imagepicker({
+					limit: 5,
+					limit_reached: function(){
+						alert('You cannot select more than 5 images')}
+				}),
+				$('select').change(function() {
+    				console.log($(this).val())
+				})
+			})
+
+			console.log(document.getElementById('selector').value);
+		</script>
+		
+	</body>
+
+</html>
