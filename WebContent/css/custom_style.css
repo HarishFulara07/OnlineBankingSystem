@@ -72,7 +72,7 @@ address{
     font-size: 18px;
 }
 
-#register-form label {
+#register-form, #register-upload-form label {
      letter-spacing: 5px;
 }
 
@@ -86,4 +86,16 @@ address{
   border-right: 1px solid #333333;
   border-bottom: 1px solid #333333;
   border-left: 1px solid #CCCCCC;
+}
+
+.modal-dialog {
+    width: 716px;
+}
+
+.modal-header {
+    background: #0095fd;
+}
+
+.modal-footer {
+    text-align: left;
 }

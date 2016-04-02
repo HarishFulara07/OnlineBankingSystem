@@ -9,15 +9,15 @@ public class JDBCMySQLConnection {
 	//static reference to itself
 	private static JDBCMySQLConnection instance = new JDBCMySQLConnection();
 	/*
-	* "jdbc:" – Required for all databases
-	* "mysql" – Any Relational Database. In this case, it is mysql
+	* "jdbc:" -  Required for all databases
+	* "mysql" - Any Relational Database. In this case, it is mysql
 	* "localhost" - is the name of the server hosting your database
 	* "3306" - is the default port number for MySQL, which can be omitted if not changed to any other number.
 	* "online_banking_system" - is the MySQL database name 
 	*/
 	public static final String URL = "jdbc:mysql://localhost:3306/online_banking_system?autoReconnect=true&useSSL=false";
 	//change this username to your database username
-	public static final String USER = "HarishFulara07";
+	public static final String USER = "root";
 	//change this password to your database password
 	public static final String PASSWORD = "Harish@1234";
 	public static final String DRIVER_CLASS = "com.mysql.jdbc.Driver"; 
