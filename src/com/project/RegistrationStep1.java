@@ -13,9 +13,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
+/*
  * Servlet implementation class RegistrationStep1
  */
+
 @WebServlet("/registration1")
 public class RegistrationStep1 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -26,8 +27,7 @@ public class RegistrationStep1 extends HttpServlet {
 	static String dob;
 	static String email;
 	static Long mobile_number;
-	static String house_number;
-	static String street;
+	static String address;
 	static String district;
 	static String city;
 	static Integer pincode;
@@ -36,7 +36,6 @@ public class RegistrationStep1 extends HttpServlet {
 	static String ifsc_code;
 	static String username;
 	static String password;
-	static Integer imgCount = 0;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		account_number = Long.valueOf(request.getParameter("acno"));
@@ -46,8 +45,7 @@ public class RegistrationStep1 extends HttpServlet {
 		dob = request.getParameter("dob");
 		email = request.getParameter("email");
 		mobile_number = Long.valueOf(request.getParameter("mobile"));
-		house_number = request.getParameter("hno");
-		street = request.getParameter("street");
+		address = request.getParameter("address");
 		district = request.getParameter("district");
 		city = request.getParameter("city");
 		pincode = Integer.valueOf(request.getParameter("pincode"));
@@ -69,34 +67,30 @@ public class RegistrationStep1 extends HttpServlet {
 	    if(!ImgSaveDir.exists())
 	    {
 	    	ImgSaveDir.mkdir();
-	    }
-	    else
-	    {
-	    	return;
-	    }
-	    
-	    String files[] = ImgGetDir.list();
-	    //System.out.println(getServletContext().getRealPath("/img"));
-	    //System.out.println("hi");
-	    
-	    for(String file : files)
-	    {
-	    	InputStream is = null;
-		    OutputStream os = null;
-		    File saveFile = new File(savePath + File.separator + file);
-		    File getFile = new File(getPath + File.separator + file);
+	    	
+	    	String files[] = ImgGetDir.list();
+		    //System.out.println(getServletContext().getRealPath("/img"));
+		    //System.out.println("hi");
 		    
-		    try {
-		        is = new FileInputStream(getFile);
-		        os = new FileOutputStream(saveFile);
-		        byte[] buffer = new byte[1024];
-		        int length;
-		        while ((length = is.read(buffer)) > 0) {
-		            os.write(buffer, 0, length);
-		        }
-		    } finally {
-		        is.close();
-		        os.close();
+		    for(String file : files)
+		    {
+		    	InputStream is = null;
+			    OutputStream os = null;
+			    File saveFile = new File(savePath + File.separator + file);
+			    File getFile = new File(getPath + File.separator + file);
+			    
+			    try {
+			        is = new FileInputStream(getFile);
+			        os = new FileOutputStream(saveFile);
+			        byte[] buffer = new byte[1024];
+			        int length;
+			        while ((length = is.read(buffer)) > 0) {
+			            os.write(buffer, 0, length);
+			        }
+			    } finally {
+			        is.close();
+			        os.close();
+			    }
 		    }
 	    }
 	    

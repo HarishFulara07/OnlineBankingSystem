@@ -27,8 +27,7 @@ public class RegistrationStep2 extends HttpServlet {
 	String dob;
 	String email;
 	Long mobile_number;
-	String house_number;
-	String street;
+	String address;
 	String district;
 	String city;
 	Integer pincode;
@@ -47,8 +46,7 @@ public class RegistrationStep2 extends HttpServlet {
 		dob = RegistrationStep1.dob;
 		email = RegistrationStep1.email;
 		mobile_number = RegistrationStep1.mobile_number;
-		house_number = RegistrationStep1.house_number;
-		street = RegistrationStep1.street;
+		address = RegistrationStep1.address;
 		district = RegistrationStep1.district;
 		city = RegistrationStep1.city;
 		pincode = RegistrationStep1.pincode;
@@ -66,8 +64,7 @@ public class RegistrationStep2 extends HttpServlet {
 		String query2 = "INSERT INTO customer_contact_info VALUES(" + account_number + ", '" + email + "', " 
 						+ mobile_number + ")";
 		
-		String query3 = "INSERT INTO customer_residence_info VALUES(" + account_number + ", '" + house_number + "', '"
-				+ street  + "', '" + district + "', '" + city + "', " + pincode + ", '" + state + "')";
+		String query3 = "INSERT INTO customer_residence_info VALUES(" + account_number + ", '" + address + "', '" + district + "', '" + city + "', " + pincode + ", '" + state + "')";
 		
 		String query4 = "INSERT INTO customer_account_info VALUES(" + account_number + ", " + balance + ", '" 
 				+ ifsc_code + "')";
@@ -103,11 +100,10 @@ public class RegistrationStep2 extends HttpServlet {
 			}
 		}
 		
-		response.sendRedirect("index.html");
+		response.sendRedirect("sendregemail");
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
 	}
-	
 }

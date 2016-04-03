@@ -67,6 +67,11 @@ address{
     color: #fff;
 }
 
+.jumb {
+	background: #3b5998;
+	color: #fff;
+}
+
 #login-form input {
     height: 50px;
     font-size: 18px;

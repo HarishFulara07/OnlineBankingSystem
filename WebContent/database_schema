@@ -3,7 +3,7 @@
 bank_info(branch_name, ifsc_code)
 customer_personal_info(account_number, first_name, last_name, gender, dob)
 customer_contact_info(account_number, email, mobile_number)
-customer_residence_info(account_number, house_number, street, district, city, pincode, state)
+customer_residence_info(account_number, address, district, city, pincode, state)
 customer_account_info(account_number, balance, ifsc_code)
 customer_login_info(account_number, username, password)
 
@@ -37,8 +37,7 @@ primary key(account_number)
 
 create table customer_residence_info (
 account_number bigint not null,
-house_number varchar(40),
-street varchar(40),
+address varchar(100),
 district varchar(40),
 city varchar(40),
 pincode int,
@@ -72,30 +71,30 @@ insert into bank_info values("Patparganj", "XYZ100005");
 
 insert into customer_personal_info values(1000000000, "Harish", "Fulara", "male", "1996-09-20");
 insert into customer_contact_info values(1000000000, "harish.fulara007@gmail.com", 9013459254);
-insert into customer_residence_info values(1000000000, "A-25", "16", "Patparganj", "Delhi", 110092, "Delhi");
+insert into customer_residence_info values(1000000000, "A-25 Street Number 16", "Patparganj", "Delhi", 110092, "Delhi");
 insert into customer_account_info values(1000000000, 200000, "XYZ100005");
 insert into customer_login_info values(1000000000, "HarishFulara07", SHA1("Harish@147258369"));
 
 insert into customer_personal_info values(1000000001, "Akash", "Gupta", "male", "1994-12-22");
 insert into customer_contact_info values(1000000001, "akash.gupta048@gmail.com", 9013485910);
-insert into customer_residence_info values(1000000001, "B-69", "13", "Lajpat Nagar", "Delhi", 110097, "Delhi");
+insert into customer_residence_info values(1000000001, "B-69 Block-13", "Lajpat Nagar", "Delhi", 110097, "Delhi");
 insert into customer_account_info values(1000000001, 220000, "XYZ100005");
 insert into customer_login_info values(1000000001, "AkashGupta48", SHA1("Akash@147258369"));
 
 insert into customer_personal_info values(1000000002, "Rohan", "Khanna", "male", "1991-01-20");
 insert into customer_contact_info values(1000000002, "rohan.khanna094@gmail.com", 9078349254);
-insert into customer_residence_info values(1000000002, "A-20", "10", "Patparganj", "Delhi", 110092, "Delhi");
+insert into customer_residence_info values(1000000002, "A-20 Street Number 10", "Patparganj", "Delhi", 110092, "Delhi");
 insert into customer_account_info values(1000000002, 100000, "XYZ100005");
 insert into customer_login_info values(1000000002, "RohanKhanna94", SHA1("Rohan@147258369"));
 
 insert into customer_personal_info values(1000000003, "Vipin", "Goyal", "male", "1980-01-01");
 insert into customer_contact_info values(1000000003, "vipin.goyal080@gmail.com", 9836854725);
-insert into customer_residence_info values(1000000003, "K-71", "16", "Mayur Vihar", "Delhi", 110092, "Delhi");
+insert into customer_residence_info values(1000000003, "K-71 Pocket-16", "Mayur Vihar", "Delhi", 110092, "Delhi");
 insert into customer_account_info values(1000000003, 1000000, "XYZ100005");
 insert into customer_login_info values(1000000003, "VipinGoyal80", SHA1("Vipin@147258369"));
 
 insert into customer_personal_info values(1000000004, "Radhika", "Sharma", "female", "1994-11-14");
 insert into customer_contact_info values(1000000004, "radhika.sharma028@gmail.com", 9013486950);
-insert into customer_residence_info values(1000000004, "B-25", "18", "Patparganj", "Delhi", 110092, "Delhi");
+insert into customer_residence_info values(1000000004, "B-25 Street Number 18", "Patparganj", "Delhi", 110092, "Delhi");
 insert into customer_account_info values(1000000004, 20000, "XYZ100005");
 insert into customer_login_info values(1000000004, "RadhikaSharma28", SHA1("Radhika@147258369"));

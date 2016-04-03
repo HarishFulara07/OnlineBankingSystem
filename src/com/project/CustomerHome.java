@@ -30,8 +30,7 @@ public class CustomerHome extends HttpServlet {
 		Date dob = null;
 		String email = null;
 		Long mobile_number = null;
-		String house_number = null;
-		String street = null;
+		String address = null;
 		String district = null;
 		String city = null;
 		Integer pincode = null;
@@ -59,8 +58,7 @@ public class CustomerHome extends HttpServlet {
 				dob = rs.getDate("dob");
 				email = rs.getString("email");
 				mobile_number = rs.getLong("mobile_number");
-				house_number = rs.getString("house_number");
-				street = rs.getString("street");
+				address = rs.getString("address");
 				district = rs.getString("district");
 				city = rs.getString("city");
 				pincode = rs.getInt("pincode");
@@ -91,8 +89,7 @@ public class CustomerHome extends HttpServlet {
 		out.println("<p>" + dob + "</p>");
 		out.println("<p>" + email + "</p>");
 		out.println("<p>" + mobile_number + "</p>");
-		out.println("<p>" + house_number + "</p>");
-		out.println("<p>" + street + "</p>");
+		out.println("<p>" + address + "</p>");
 		out.println("<p>" + district + "</p>");
 		out.println("<p>" + city + "</p>");
 		out.println("<p>" + pincode + "</p>");
